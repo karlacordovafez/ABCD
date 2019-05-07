@@ -1,0 +1,277 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>EJERCICIO_4</title><meta name="generator" content="MATLAB 9.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-05-07"><meta name="DC.source" content="EJERCICIO_4.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#6">Ejercicio 5.</a></li></ul></div><pre class="codeinput">clc
+close <span class="string">all</span>
+clear <span class="string">all</span>
+<span class="comment">% * Ejercicio M1.1</span>
+f = inline(<span class="string">'exp(-t).*cos(2*pi*t)'</span>, <span class="string">'t'</span>);
+t = (-2:0.01:2);
+
+<span class="comment">% M1.1 con funci&oacute;n an&oacute;nima</span>
+f = @(t) exp(-t).*cos(2*pi*t);
+figure
+plot(t, f(t), <span class="string">'r'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'f(t)'</span>); title(<span class="string">'f(t) = e^{-t}cos(2\pi t)'</span>);
+</pre><img vspace="5" hspace="5" src="EJERCICIO_4_01.png" alt=""> <div><ul><li>Ejercicio M1.2</li></ul></div><pre class="codeinput">u = inline(<span class="string">'(t&gt;=0)'</span>, <span class="string">'t'</span>); <span class="comment">%escal&oacute;n</span>
+t = (-2:0.01:2);
+
+u = @(t) (t&gt;=0);
+figure
+plot(t, u(t), <span class="string">'g'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'u(t)'</span>); title(<span class="string">'Escal&oacute;n con funci&oacute;n an&oacute;nima'</span>);
+axis([-2 2 -0.1 1.1]);
+
+
+p = inline(<span class="string">'(t&gt;=0) &amp; (t&lt;1)'</span>, <span class="string">'t'</span>); <span class="comment">%pulso unitario</span>
+t = (-1:0.01:2);
+
+p = @(t) (t&gt;=0) &amp; (t&lt;1); <span class="comment">%pulso unitario</span>
+figure
+plot(t, p(t), <span class="string">'g'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'p(t)'</span>); title(<span class="string">'Pulso unitario con funci&oacute;n an&oacute;nima'</span>);
+axis([-2 2 -0.1 1.1]);
+</pre><img vspace="5" hspace="5" src="EJERCICIO_4_02.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_03.png" alt=""> <div><ul><li>Ejercicio M1.3</li></ul></div><pre class="codeinput">g = inline(<span class="string">'exp(-t).*cos(2*pi*t).*(t&gt;=0)'</span>, <span class="string">'t'</span>);
+t = (-2:0.01:2);
+
+g = @(t) exp(-t).*cos(2*pi*t).*(t&gt;=0);
+figure
+plot(t, g(t), <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(t)'</span>); title(<span class="string">'g(t) = e^{-t}cos(2\pi t)*(t&gt;=0)'</span>);
+figure
+plot(t, g(2*t+1), <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(t)'</span>); title(<span class="string">'g(2t + 1)'</span>);
+figure
+plot(t, g(-t+1), <span class="string">'c'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(t)'</span>); title(<span class="string">'g(-t + 1)'</span>);
+figure
+plot(t, g(2*t+1)+g(-t+1), <span class="string">'c'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'g(t)'</span>); title(<span class="string">'g(2t + 1) + g(-t + 1)'</span>);
+</pre><img vspace="5" hspace="5" src="EJERCICIO_4_04.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_05.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_06.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_07.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_08.png" alt=""> <div><ul><li>Ejercicio M1.4</li></ul></div><pre class="codeinput">x = inline(<span class="string">'exp(-t).*((t&gt;=0) &amp; (t&lt;1))'</span>, <span class="string">'t'</span>);
+t = (0:0.01:1);
+E_x = sum(x(t).*x(t)*0.01);
+x_squared = inline(<span class="string">'exp(-2*t).*((t&gt;=0) &amp; (t&lt;1))'</span>, <span class="string">'t'</span>);
+E_x = quad(x_squared, 0, 1);
+g_squared = inline(<span class="string">'exp(-2*t).*((cos(2*pi*t)).^2).*(t&gt;=0)'</span>, <span class="string">'t'</span>);
+t = (0:0.001:100);
+E_g = sum(g_squared(t)*0.001);
+E_g = quad(g_squared,0,100);
+
+<span class="comment">% Con funciones an&oacute;nimas:</span>
+x_squared = @(t) exp(-2*t).*((t&gt;=0) &amp; (t&lt;1));
+E_x = quad(x_squared, 0, 1)
+g_squared = @(t) exp(-2*t).*((cos(2*pi*t)).^2).*(t&gt;=0);
+E_g = quad(g_squared,0,100)
+E_g = sum(g_squared(t)*0.001)
+</pre><pre class="codeoutput">
+E_x =
+
+    0.4323
+
+
+E_g =
+
+    0.2562
+
+
+E_g =
+
+    0.2567
+
+</pre><p>Como se puede notar en este ejercicio, podemos deducir que el uso de <i>inline</i> y las funciones an&oacute;nimas, es exactamente igual, la &uacute;nica diferencia es la sint&aacute;xis, donde <b>f = inline('funci&oacute;n','variable')</b> , que ser&iacute;a lo mismo a <b>f = @(variable) expresi&oacute;n</b> .</p><h2 id="6">Ejercicio 5.</h2><p>Con la se&ntilde;al x(t) mostrada a continuaci&oacute;n, graficar:</p><div><ol><li>x(t - 4)</li><li>x(t/1.5)</li><li>x(-t)</li><li>x(2t - 4)</li><li>x(2 - t)</li></ol></div><pre class="codeinput">x = @(t) (-t).*((t&gt;=-4) &amp; (t&lt;0))+t.*((t&gt;=0) &amp; (t&lt;2));
+t = -10:0.01:10;
+figure
+plot(t,x(t), <span class="string">'k'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'x(t)'</span>); title(<span class="string">'x(t) = -t.*((t&gt;=-4) &amp; (t&lt;0)) + t.*((t&gt;=0) &amp; (t&lt;2)'</span>);
+</pre><img vspace="5" hspace="5" src="EJERCICIO_4_09.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_10.png" alt=""> <p>Para la graficaci&oacute;n de las se&ntilde;ales, &uacute;nicamente se modifica el argumento de la se&ntilde;al an&oacute;nima dentro del <i>plot</i>.</p><pre class="codeinput">figure
+plot(t,x(t-4), <span class="string">'m'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span> <span class="comment">% 1)</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'x(t)'</span>); title(<span class="string">'1. x(t - 4)'</span>);
+figure
+plot(t,x(t/1.5), <span class="string">'c'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span> <span class="comment">% 2)</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'x(t)'</span>); title(<span class="string">'2. x(t/1.5)'</span>);
+figure
+plot(t,x(-t), <span class="string">'b'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span> <span class="comment">%3)</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'x(t)'</span>); title(<span class="string">'3. x(-t)'</span>);
+figure
+plot(t,x(2*t-4), <span class="string">'y'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span> <span class="comment">% 4)</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'x(t)'</span>); title(<span class="string">'4. x(2t - 4)'</span>);
+figure
+plot(t,x(2-t), <span class="string">'g'</span>, <span class="string">'LineWidth'</span>, 2); grid <span class="string">on</span> <span class="comment">% 5)</span>
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'x(t)'</span>); title(<span class="string">'5. x(2 - t)'</span>);
+</pre><img vspace="5" hspace="5" src="EJERCICIO_4_11.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_12.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_13.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_14.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_15.png" alt=""> <img vspace="5" hspace="5" src="EJERCICIO_4_16.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clc
+close all
+clear all
+% * Ejercicio M1.1
+f = inline('exp(-t).*cos(2*pi*t)', 't');
+t = (-2:0.01:2);
+
+% M1.1 con función anónima
+f = @(t) exp(-t).*cos(2*pi*t);
+figure
+plot(t, f(t), 'r', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('f(t)'); title('f(t) = e^{-t}cos(2\pi t)');
+%%
+% * Ejercicio M1.2
+% 
+u = inline('(t>=0)', 't'); %escalón
+t = (-2:0.01:2);
+
+u = @(t) (t>=0);
+figure
+plot(t, u(t), 'g', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('u(t)'); title('Escalón con función anónima');
+axis([-2 2 -0.1 1.1]);
+
+
+p = inline('(t>=0) & (t<1)', 't'); %pulso unitario
+t = (-1:0.01:2);
+
+p = @(t) (t>=0) & (t<1); %pulso unitario
+figure
+plot(t, p(t), 'g', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('p(t)'); title('Pulso unitario con función anónima');
+axis([-2 2 -0.1 1.1]);
+%%
+% * Ejercicio M1.3
+g = inline('exp(-t).*cos(2*pi*t).*(t>=0)', 't');
+t = (-2:0.01:2);
+
+g = @(t) exp(-t).*cos(2*pi*t).*(t>=0);
+figure
+plot(t, g(t), 'b', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('g(t)'); title('g(t) = e^{-t}cos(2\pi t)*(t>=0)');
+figure
+plot(t, g(2*t+1), 'b', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('g(t)'); title('g(2t + 1)');
+figure
+plot(t, g(-t+1), 'c', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('g(t)'); title('g(-t + 1)');
+figure
+plot(t, g(2*t+1)+g(-t+1), 'c', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('g(t)'); title('g(2t + 1) + g(-t + 1)');
+%%
+% * Ejercicio M1.4
+x = inline('exp(-t).*((t>=0) & (t<1))', 't');
+t = (0:0.01:1);
+E_x = sum(x(t).*x(t)*0.01);
+x_squared = inline('exp(-2*t).*((t>=0) & (t<1))', 't');
+E_x = quad(x_squared, 0, 1);
+g_squared = inline('exp(-2*t).*((cos(2*pi*t)).^2).*(t>=0)', 't');
+t = (0:0.001:100);
+E_g = sum(g_squared(t)*0.001);
+E_g = quad(g_squared,0,100);
+
+% Con funciones anónimas:
+x_squared = @(t) exp(-2*t).*((t>=0) & (t<1));
+E_x = quad(x_squared, 0, 1)
+g_squared = @(t) exp(-2*t).*((cos(2*pi*t)).^2).*(t>=0);
+E_g = quad(g_squared,0,100)
+E_g = sum(g_squared(t)*0.001)
+%%
+% Como se puede notar en este ejercicio, podemos deducir que el uso de
+% _inline_ y las funciones anónimas, es exactamente igual, la única
+% diferencia es la sintáxis, donde *f = inline('función','variable')* , que
+% sería lo mismo a *f = @(variable) expresión* .
+%% Ejercicio 5.
+%
+% Con la señal x(t) mostrada a continuación, graficar:
+%% 
+% # x(t - 4)
+% # x(t/1.5)
+% # x(-t)
+% # x(2t - 4)
+% # x(2 - t)
+%
+x = @(t) (-t).*((t>=-4) & (t<0))+t.*((t>=0) & (t<2));
+t = -10:0.01:10;
+figure
+plot(t,x(t), 'k', 'LineWidth', 2); grid on
+xlabel('t'); ylabel('x(t)'); title('x(t) = -t.*((t>=-4) & (t<0)) + t.*((t>=0) & (t<2)');
+%%
+% Para la graficación de las señales, únicamente se modifica el argumento
+% de la señal anónima dentro del _plot_.
+figure
+plot(t,x(t-4), 'm', 'LineWidth', 2); grid on % 1)
+xlabel('t'); ylabel('x(t)'); title('1. x(t - 4)');
+figure
+plot(t,x(t/1.5), 'c', 'LineWidth', 2); grid on % 2)
+xlabel('t'); ylabel('x(t)'); title('2. x(t/1.5)');
+figure
+plot(t,x(-t), 'b', 'LineWidth', 2); grid on %3)
+xlabel('t'); ylabel('x(t)'); title('3. x(-t)');
+figure
+plot(t,x(2*t-4), 'y', 'LineWidth', 2); grid on % 4)
+xlabel('t'); ylabel('x(t)'); title('4. x(2t - 4)');
+figure
+plot(t,x(2-t), 'g', 'LineWidth', 2); grid on % 5)
+xlabel('t'); ylabel('x(t)'); title('5. x(2 - t)');
+
+##### SOURCE END #####
+--></body></html>
